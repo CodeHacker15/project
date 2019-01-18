@@ -1,4 +1,4 @@
-byte leds[9][6] = {{LOW, HIGH, HIGH, HIGH, LOW, LOW},
+byte bulb[9][6] = {{LOW, HIGH, HIGH, HIGH, LOW, LOW},
                   {LOW, HIGH, HIGH, LOW, HIGH, LOW},
                   {LOW, HIGH, HIGH, LOW, LOW, HIGH},
                   {HIGH, LOW, HIGH, HIGH, LOW, LOW},
@@ -49,7 +49,7 @@ void setup()
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
   
-  clearLeds();   
+  clearbulb();   
   digitalWrite(2, LOW);  
   digitalWrite(5, HIGH); 
   delay(1000);
@@ -88,7 +88,7 @@ void loop()
     {
       for(int j=0; j<3; j++)
       {
-        clearLeds();
+        clearbulb();
         digitalWrite(i+2, LOW);
         digitalWrite(j+5, HIGH);
         delay(200);
@@ -119,7 +119,7 @@ void loop()
   }  
 }
 
-void clearLeds()
+void clearbulb()
 {
   digitalWrite(2, HIGH);  
   digitalWrite(3, HIGH);
@@ -137,7 +137,7 @@ void printPatern(byte* number)
     {
       for(int j=0; j<6; j++)
       {
-        digitalWrite(j+2, leds[i][j]);        
+        digitalWrite(j+2, bulb[i][j]);        
       }      
     }    
 
